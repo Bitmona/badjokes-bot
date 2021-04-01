@@ -133,7 +133,7 @@ async function tweet(logger:Pino.Logger, logo:Logo) {
     logger.debug({ apiResponse: uploadResponse }, 'upload response');
 */
     // update its metadata
-    const mediaIdStr = uploadResponse.data.media_id_string;
+  /*  const mediaIdStr = uploadResponse.data.media_id_string;
     const metadataResponse = await twitterClient.post('media/metadata/create', {
         media_id: uploadResponse.data.media_id_string,
         alt_text: { text: `PNG Preview of the SVG logo for ${logo.name}` }
@@ -147,7 +147,7 @@ async function tweet(logger:Pino.Logger, logo:Logo) {
         source: 'vlz-bot',
         trim_user: true
     });
-    logger.debug({ apiResponse: postResult }, 'update response');
+    logger.debug({ apiResponse: postResult }, 'update response'); */
 /*
     // delete the tweet
     const deleteResult = twitterClient.post('statuses/destroy/:id', {
