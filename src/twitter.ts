@@ -32,7 +32,7 @@ async function getLastTimestamp(logger:Pino.Logger): Promise<moment.Moment> {
     const timelineResponse = await twitterClient.get('statuses/user_timeline', {
         count: 10,
         exclude_replies: true,
-        screen_name: "VectorLogoZone",
+        screen_name: "BadJokesZone",
         trim_user: true,
         tweet_mode: 'extended'
     });
@@ -56,7 +56,7 @@ async function getRecent(logger:Pino.Logger): Promise<string[]> {
     const timelineResponse = await twitterClient.get('statuses/user_timeline', {
             count: 25,
             exclude_replies: true,
-            screen_name: "VectorLogoZone",
+            screen_name: "BadJokesZone",
             trim_user: true,
             tweet_mode: 'extended'
         });
@@ -101,38 +101,23 @@ async function tweet(logger:Pino.Logger, logo:Logo) {
         throw new Error('you must set TWITTER_CONSUMER_KEY and TWITTER_CONSUMER_SECRET');
     }
 
-    const imageUrl = `https://svg2raster.fileformat.info/vlz.jsp?svg=/logos/${logo.handle}/${logo.handle}-ar21.svg&width=1024`;
-
-    const imgResponse = await axios.get(imageUrl, {
-        responseType: 'arraybuffer'
-        }); 
-
-    logger.debug({
-        imageUrl,
-        status: imgResponse.status,
-        statusText: imgResponse.statusText,
-        headers: imgResponse.headers,
-        contentType: imgResponse.headers["content-type"],
-        imageSize: imgResponse.data.length,
-        dataType: typeof imgResponse.data,
-    }, 'img response');
 
     const twitterClient = await getClient(logger);
 
-    /*
-     * plain tweet
+    
+     //plain tweet
     const tweetResponse = twitterClient.post('statuses/update', {
         status: 'hello world again!',
         //source: '<a href="https://github.com/VectorLogoZone/vlz-bot">VLZ Bot</a>',
     });
     logger.debug({ apiResponse: tweetResponse }, 'simple tweet response');
-    */
+   
 
     // pick a random logo
     // LATER: confirm it isn't in the last N tweets (articleTweetExists in https://github.com/danielelkington/twitter-vue-dev/blob/master/AutoTweetDevArticles/tweet.ts)
     // download svg
     // convert to png
-
+/*
     //var b64content = fs.readFileSync('./test.png', { encoding: 'base64' })
     var b64content = Buffer.from(imgResponse.data, 'binary').toString('base64');
 
@@ -140,13 +125,13 @@ async function tweet(logger:Pino.Logger, logo:Logo) {
         base64length: b64content.length,
         base64content: b64content
     }, "image converted to base64");
-
+*/
     // post the media to Twitter
-    const uploadResponse = await twitterClient.post('media/upload', {
+    /*const uploadResponse = await twitterClient.post('media/upload', {
         media_data: b64content
     });
     logger.debug({ apiResponse: uploadResponse }, 'upload response');
-
+*/
     // update its metadata
     const mediaIdStr = uploadResponse.data.media_id_string;
     const metadataResponse = await twitterClient.post('media/metadata/create', {
