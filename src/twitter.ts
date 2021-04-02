@@ -84,15 +84,15 @@ async function findRandomNotRecent(logger:Pino.Logger, recent:string[]): Promise
         const jokeResponse = await axios.get('https://badjokes.zone/jokes.json');
         logger.debug({ resp: jokeResponse }, 'joke response');
         const jokeList = jokeResponse.data.jokes;
-        const ranval = jokeList[Math.floor(Math.random() * (jokeList.length + 1))]
-        console.log(ranval);
-        if (!recent.find(x => x == jokeList[ranval].joke)) {
+        const ranjoke = jokeList[Math.floor(Math.random() * (jokeList.length + 1))]
+        console.log(ranjoke);
+        if (!recent.find(x => x == ranjoke.joke)) {
             return {
-                joke: jokeList[ranval].joke,
-                id: jokeList[ranval].id
+                joke: ranjoke.joke,
+                id: ranjoke.id
             }
         }
-        logger.info({ recent, logo: jokeList[ranval].joke}, "guessed a recent joke");
+        logger.info({ recent, logo: ranjoke.joke}, "guessed a recent joke");
     }
     throw new Error("No unused jokes!?!?")
 }
