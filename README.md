@@ -35,8 +35,8 @@ Contributions are welcome!  Please follow the standard Github [Fork & Pull Reque
 [![pino](https://www.vectorlogo.zone/logos/getpinoio/getpinoio-ar21.svg)](https://www.getpino.io/ "Logging")
 [![Twitter](https://www.vectorlogo.zone/logos/twitter/twitter-ar21.svg)](https://twitter.com/ "Where to post")
 [![TypeScript](https://www.vectorlogo.zone/logos/typescriptlang/typescriptlang-ar21.svg)](https://www.typescriptlang.org/ "Programming Language")
-[![VectorLogoZone](https://www.vectorlogo.zone/logos/vectorlogozone/vectorlogozone-ar21.svg)](https://www.vectorlogo.zone/ "Logos")
-Original Repo (https://github.com/VectorLogoZone/vlz-bot/ "vlz-bot")
+[![VectorLogoZone](https://www.vectorlogo.zone/logos/vectorlogozone/vectorlogozone-ar21.svg)](https://www.vectorlogo.zone/ "Logos") <br/>
+Original Repo:  [vlz-bot](https://github.com/VectorLogoZone/vlz-bot/)
 
 * [axios](https://github.com/axios/axios)
 * [moment.js](https://momentjs.com/?)
