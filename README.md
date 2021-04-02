@@ -1,4 +1,4 @@
-# BadJokes.zone Bot [<img alt="BadJokes.zone Logo" src="https://tools.vectorlogo.zone/favicon.svg" height="90" align="right" />](https://www.badjokes.zone/)
+# BadJokes.zone Bot [<img alt="BadJokes.zone Logo" src="https://raw.githubusercontent.com/Bitmona/badjokes2/master/badjokes-logo.png" height="90" align="right" />](https://www.badjokes.zone/)
 
 [![daily](https://github.com/Bitmona/badjokes-bot/workflows/daily/badge.svg)](https://github.com/Bitmona/badjokes-bot/actions?query=workflow%3Adaily)
 
