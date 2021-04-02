@@ -1,10 +1,10 @@
-# VectorLogoZone Bot [<img alt="VectorLogoZone Logo" src="https://tools.vectorlogo.zone/favicon.svg" height="90" align="right" />](https://www.vectorlogo.zone/)
+# BadJokes.zone Bot [<img alt="BadJokes.zone Logo" src="https://tools.vectorlogo.zone/favicon.svg" height="90" align="right" />](https://www.badjokes.zone/)
 
 [![daily](https://github.com/VectorLogoZone/vlz-bot/workflows/daily/badge.svg)](https://github.com/VectorLogoZone/vlz-bot/actions?query=workflow%3Adaily)
 
-Bot to automate posting to social media for VectorLogoZone
+Bot to automate posting to social media for @BadJokesZone
 
-See the results at [Twitter](https://twitter.com/VectorLogoZone).
+See the results at [Twitter](https://twitter.com/BadJokesZone).
 
 ## Settings
 
@@ -36,6 +36,7 @@ Contributions are welcome!  Please follow the standard Github [Fork & Pull Reque
 [![Twitter](https://www.vectorlogo.zone/logos/twitter/twitter-ar21.svg)](https://twitter.com/ "Where to post")
 [![TypeScript](https://www.vectorlogo.zone/logos/typescriptlang/typescriptlang-ar21.svg)](https://www.typescriptlang.org/ "Programming Language")
 [![VectorLogoZone](https://www.vectorlogo.zone/logos/vectorlogozone/vectorlogozone-ar21.svg)](https://www.vectorlogo.zone/ "Logos")
+Original Repo (https://github.com/VectorLogoZone/vlz-bot/ "vlz-bot")
 
 * [axios](https://github.com/axios/axios)
 * [moment.js](https://momentjs.com/?)
