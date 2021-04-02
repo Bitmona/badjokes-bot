@@ -109,7 +109,7 @@ async function tweet(logger:Pino.Logger, logo:Logo) {
     
      //plain tweet
     const tweetResponse = twitterClient.post('statuses/update', {
-        status: `${logo.joke}`,
+        status: `${logo.joke} | See more jokes at https://badjokes.zone`,
         source: 'badjokes-bot',
         trim_user: true
         //source: '<a href="https://github.com/VectorLogoZone/vlz-bot">VLZ Bot</a>',
