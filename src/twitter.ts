@@ -7,8 +7,8 @@ import axios from 'axios';
 import moment from 'moment';
 
 export type Logo = {
-    handle: string,
-    name: string
+    joke: string,
+    id: string
 };
 
 async function getClient(logger:Pino.Logger):Promise<any> {
@@ -82,15 +82,16 @@ async function findRandomNotRecent(logger:Pino.Logger, recent:string[]): Promise
 
     for (var x = 0; x < 100; x++) {
         const jokeResponse = await axios.get('https://badjokes.zone/jokes.json');
+        const jokeList = jokeResponse.data.jokes
         logger.debug({ resp: jokeResponse }, 'joke response');
-        const ranval = jokeResponse.data.jokes[Math.floor(Math.random() * (jokeResponse.data.jokes.length + 1))]
-        if (!recent.find(x => x == jokeResponse.data.jokes[ranval].joke)) {
+        const ranval = jokeList[Math.floor(Math.random() * (jokeList.length + 1))]
+        if (!recent.find(x => x == jokeList[ranval].joke)) {
             return {
-                joke: jokeResponse.data.jokes[ranval].joke,
-                id: jokeResponse.data.jokes[ranval].id
+                joke: jokeList[ranval].joke,
+                id: jokeList[ranval].id
             }
         }
-        logger.info({ recent, logo: jokeResponse.data.jokes[ranval].joke}, "guessed a recent joke");
+        logger.info({ recent, logo: jokeList[ranval].joke}, "guessed a recent joke");
     }
     throw new Error("No unused jokes!?!?")
 }
@@ -108,7 +109,6 @@ async function tweet(logger:Pino.Logger, logo:Logo) {
      //plain tweet
     const tweetResponse = twitterClient.post('statuses/update', {
         status: `${logo.joke}`,
-        media_ids: [mediaIdStr],
         source: 'badjokes-bot',
         trim_user: true
         //source: '<a href="https://github.com/VectorLogoZone/vlz-bot">VLZ Bot</a>',
