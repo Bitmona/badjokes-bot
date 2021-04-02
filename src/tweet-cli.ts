@@ -14,7 +14,7 @@ const logger = PinoCaller(Pino({
 async function checkElapsed(logger:any):Promise<void> {
 
     const lastTweet = await twitter.getLastTimestamp(logger);
-    const earliestNextTweetTime = lastTweet.clone().add(16, 'seconds');
+    const earliestNextTweetTime = lastTweet.clone().add(16, 'hours');
     const now = moment();
     if (earliestNextTweetTime.isAfter(now)) {
         logger.error( { earliestNextTweetTime, lastTweet, now }, 'Trying to tweet too soon!');
