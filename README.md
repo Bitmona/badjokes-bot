@@ -1,6 +1,6 @@
 # BadJokes.zone Bot [<img alt="BadJokes.zone Logo" src="https://tools.vectorlogo.zone/favicon.svg" height="90" align="right" />](https://www.badjokes.zone/)
 
-[![daily](https://github.com/VectorLogoZone/vlz-bot/workflows/daily/badge.svg)](https://github.com/VectorLogoZone/vlz-bot/actions?query=workflow%3Adaily)
+[![daily](https://github.com/Bitmona/badjokes-bot/workflows/daily/badge.svg)](https://github.com/Bitmona/badjokes-bot/actions?query=workflow%3Adaily)
 
 Bot to automate posting to social media for @BadJokesZone
 
