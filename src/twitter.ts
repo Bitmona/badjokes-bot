@@ -67,13 +67,11 @@ async function getRecent(logger:Pino.Logger): Promise<string[]> {
     for (const tweet of timelineResponse.data) {
         logger.trace({ created: tweet.created_at, urls: tweet.entities.urls.map((x: any) => x.display_url) }, 'historical tweet');
         for (const url of tweet.entities.urls) {
-            if (url.display_url.startsWith("vlz.one/")) {
-                retVal.push(url.display_url.slice(8));
-            }
+            retVal.push(url.display_url);
         }
     }
     retVal.sort()
-    logger.debug( { handles: retVal }, "recently tweeted logos")
+    logger.debug( { handles: retVal }, "recently tweeted jokes")
 
     return retVal;
 }
