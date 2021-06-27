@@ -110,15 +110,14 @@ async function tweet(logger:Pino.Logger, logo:Logo) {
         status: `${logo.joke} | See more jokes at https://badjokes.zone`,
         source: 'badjokes-bot',
         trim_user: true
-        //source: '<a href="https://github.com/VectorLogoZone/vlz-bot">VLZ Bot</a>',
+        //source: '<a href="https://github.com/Bitmona/badjokes-bot">BadJokesZone Bot</a>',
     });
     logger.debug({ apiResponse: tweetResponse }, 'simple tweet response');
    
 
-    // pick a random logo
+    // pick a random joke
     // LATER: confirm it isn't in the last N tweets (articleTweetExists in https://github.com/danielelkington/twitter-vue-dev/blob/master/AutoTweetDevArticles/tweet.ts)
-    // download svg
-    // convert to png
+
 /*
     //var b64content = fs.readFileSync('./test.png', { encoding: 'base64' })
     var b64content = Buffer.from(imgResponse.data, 'binary').toString('base64');
