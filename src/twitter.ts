@@ -90,7 +90,7 @@ async function findRandomNotRecent(logger:Pino.Logger, recent:string[]): Promise
                 id: ranjoke.id
             }
         }
-        logger.info({ recent, logo: ranjoke.joke}, "guessed a recent joke");
+        logger.info({ recent, logo: ranjoke.joke}, "guessed a recent joke!");
     }
     throw new Error("No unused jokes!?!?")
 }
